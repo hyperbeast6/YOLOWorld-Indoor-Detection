@@ -14,7 +14,7 @@ from mmdet.utils import get_test_pipeline_cfg
 
 import supervision as sv
 
-BOUNDING_BOX_ANNOTATOR = sv.BoundingBoxAnnotator(thickness=1)
+BOUNDING_BOX_ANNOTATOR = sv.RoundBoxAnnotator(thickness=1)
 MASK_ANNOTATOR = sv.MaskAnnotator()
 
 

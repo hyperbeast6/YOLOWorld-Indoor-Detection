@@ -1,6 +1,6 @@
 # Copyright (c) Tencent Inc. All rights reserved.
 import os.path as osp
-
+import sys
 import cv2
 import torch
 from mmengine.config import Config
@@ -35,9 +35,9 @@ def inference(model, image, texts, test_pipeline, score_thr=0.3, max_dets=100):
 
 
 if __name__ == "__main__":
-
-    config_file = "configs/pretrain/yolo_world_v2_x_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_1280ft_lvis_minival.py"
-    checkpoint = "weights/yolo_world_v2_x_obj365v1_goldg_cc3mlite_pretrain_1280ft-14996a36.pth"
+    # 使用不需要CLIP模型的配置文件
+    config_file = "E:\code\YOLO-World\configs\pretrain\yolo_world_v2_s_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py"
+    checkpoint = "E:\code\YOLO-World\weights\yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth"
 
     cfg = Config.fromfile(config_file)
     cfg.work_dir = osp.join('./work_dirs')
