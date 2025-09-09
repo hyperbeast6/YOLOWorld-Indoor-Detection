@@ -1,0 +1,321 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "name": "backpack"
+    },
+    {
+      "id": 1,
+      "name": "bathroom"
+    },
+    {
+      "id": 2,
+      "name": "bed"
+    },
+    {
+      "id": 3,
+      "name": "bedroom"
+    },
+    {
+      "id": 4,
+      "name": "book"
+    },
+    {
+      "id": 5,
+      "name": "bottle"
+    },
+    {
+      "id": 6,
+      "name": "bowl"
+    },
+    {
+      "id": 7,
+      "name": "carpet"
+    },
+    {
+      "id": 8,
+      "name": "ceiling"
+    },
+    {
+      "id": 9,
+      "name": "cell phone"
+    },
+    {
+      "id": 10,
+      "name": "chair"
+    },
+    {
+      "id": 11,
+      "name": "clock"
+    },
+    {
+      "id": 12,
+      "name": "couch"
+    },
+    {
+      "id": 13,
+      "name": "cup"
+    },
+    {
+      "id": 14,
+      "name": "curtain"
+    },
+    {
+      "id": 15,
+      "name": "dining table"
+    },
+    {
+      "id": 16,
+      "name": "dining_room"
+    },
+    {
+      "id": 17,
+      "name": "door"
+    },
+    {
+      "id": 18,
+      "name": "floor"
+    },
+    {
+      "id": 19,
+      "name": "fork"
+    },
+    {
+      "id": 20,
+      "name": "handbag"
+    },
+    {
+      "id": 21,
+      "name": "keyboard"
+    },
+    {
+      "id": 22,
+      "name": "kitchen"
+    },
+    {
+      "id": 23,
+      "name": "knife"
+    },
+    {
+      "id": 24,
+      "name": "lamp"
+    },
+    {
+      "id": 25,
+      "name": "laptop"
+    },
+    {
+      "id": 26,
+      "name": "living_room"
+    },
+    {
+      "id": 27,
+      "name": "mirror"
+    },
+    {
+      "id": 28,
+      "name": "mouse"
+    },
+    {
+      "id": 29,
+      "name": "office"
+    },
+    {
+      "id": 30,
+      "name": "other"
+    },
+    {
+      "id": 31,
+      "name": "other_indoor"
+    },
+    {
+      "id": 32,
+      "name": "person"
+    },
+    {
+      "id": 33,
+      "name": "plant"
+    },
+    {
+      "id": 34,
+      "name": "refrigerator"
+    },
+    {
+      "id": 35,
+      "name": "remote"
+    },
+    {
+      "id": 36,
+      "name": "rug"
+    },
+    {
+      "id": 37,
+      "name": "spoon"
+    },
+    {
+      "id": 38,
+      "name": "study"
+    },
+    {
+      "id": 39,
+      "name": "tv"
+    },
+    {
+      "id": 40,
+      "name": "vase"
+    },
+    {
+      "id": 41,
+      "name": "wall"
+    },
+    {
+      "id": 42,
+      "name": "window"
+    },
+    {
+      "id": 43,
+      "name": "microwave"
+    },
+    {
+      "id": 44,
+      "name": "sink"
+    },
+    {
+      "id": 45,
+      "name": "suitcase"
+    },
+    {
+      "id": 46,
+      "name": "oven"
+    },
+    {
+      "id": 47,
+      "name": "potted plant"
+    },
+    {
+      "id": 48,
+      "name": "umbrella"
+    },
+    {
+      "id": 49,
+      "name": "sports ball"
+    },
+    {
+      "id": 50,
+      "name": "apple"
+    },
+    {
+      "id": 51,
+      "name": "cat"
+    },
+    {
+      "id": 52,
+      "name": "wine glass"
+    },
+    {
+      "id": 53,
+      "name": "banana"
+    },
+    {
+      "id": 54,
+      "name": "scissors"
+    },
+    {
+      "id": 55,
+      "name": "teddy bear"
+    },
+    {
+      "id": 56,
+      "name": "toaster"
+    },
+    {
+      "id": 57,
+      "name": "bench"
+    },
+    {
+      "id": 58,
+      "name": "car"
+    },
+    {
+      "id": 59,
+      "name": "sheep"
+    },
+    {
+      "id": 60,
+      "name": "orange"
+    },
+    {
+      "id": 61,
+      "name": "dog"
+    },
+    {
+      "id": 62,
+      "name": "toilet"
+    },
+    {
+      "id": 63,
+      "name": "cake"
+    },
+    {
+      "id": 64,
+      "name": "horse"
+    },
+    {
+      "id": 65,
+      "name": "bicycle"
+    },
+    {
+      "id": 66,
+      "name": "bird"
+    },
+    {
+      "id": 67,
+      "name": "hot dog"
+    },
+    {
+      "id": 68,
+      "name": "donut"
+    },
+    {
+      "id": 69,
+      "name": "frisbee"
+    },
+    {
+      "id": 70,
+      "name": "boat"
+    },
+    {
+      "id": 71,
+      "name": "tie"
+    },
+    {
+      "id": 72,
+      "name": "carrot"
+    },
+    {
+      "id": 73,
+      "name": "motorcycle"
+    },
+    {
+      "id": 74,
+      "name": "truck"
+    },
+    {
+      "id": 75,
+      "name": "sandwich"
+    },
+    {
+      "id": 76,
+      "name": "tennis racket"
+    },
+    {
+      "id": 77,
+      "name": "pizza"
+    }
+  ],
+  "info": {
+    "year": 2025,
+    "version": "1.0",
+    "contributor": "Label Studio"
+  }
+}

@@ -1,0 +1,69 @@
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true" grid="false"/>
+  
+  <RectangleLabels name="objects" toName="image">
+    <Label value="chair" background="#FF6B6B" hotkey="1"/>
+    <Label value="couch" background="#4ECDC4" hotkey="2"/>
+    <Label value="bed" background="#45B7D1" hotkey="3"/>
+    <Label value="dining table" background="#96CEB4" hotkey="4"/>
+    <Label value="tv" background="#FFEAA7" hotkey="5"/>
+    <Label value="cell phone" background="#F8C471" hotkey="q"/>
+    <Label value="cup" background="#82E0AA" hotkey="w"/>
+    <Label value="book" background="#F1948A" hotkey="e"/>
+    <Label value="bottle" background="#85C1E9" hotkey="r"/>
+    <Label value="bowl" background="#F7DC6F" hotkey="t"/>
+    <Label value="fork" background="#BB8FCE" hotkey="y"/>
+    <Label value="knife" background="#F8C471" hotkey="u"/>
+    <Label value="spoon" background="#82E0AA" hotkey="i"/>
+    <Label value="remote" background="#F1948A" hotkey="o"/>
+    <Label value="mouse" background="#85C1E9" hotkey="p"/>
+    <Label value="keyboard" background="#F7DC6F" hotkey="a"/>
+    <Label value="laptop" background="#BB8FCE" hotkey="s"/>
+    <Label value="handbag" background="#F8C471" hotkey="d"/>
+    <Label value="backpack" background="#82E0AA" hotkey="f"/>
+    <Label value="clock" background="#F1948A" hotkey="g"/>
+    <Label value="vase" background="#85C1E9" hotkey="h"/>
+    <Label value="plant" background="#F7DC6F" hotkey="j"/>
+    <Label value="mirror" background="#BB8FCE" hotkey="k"/>
+    <Label value="lamp" background="#F8C471" hotkey="l"/>
+    <Label value="curtain" background="#82E0AA" hotkey="z"/>
+    <Label value="window" background="#F1948A" hotkey="x"/>
+    <Label value="door" background="#85C1E9" hotkey="c"/>
+    <Label value="wall" background="#F7DC6F" hotkey="v"/>
+    <Label value="floor" background="#BB8FCE" hotkey="b"/>
+    <Label value="ceiling" background="#F8C471" hotkey="n"/>
+    <Label value="carpet" background="#82E0AA" hotkey="m"/>
+    <Label value="rug" background="#F1948A" hotkey=","/>
+    <Label value="other" background="#95A5A6" hotkey="."/>
+  </RectangleLabels>
+  
+  <Relations>
+    <Relation value="above" background="#E74C3C" hotkey="shift+1"/>
+    <Relation value="below" background="#3498DB" hotkey="shift+2"/>
+    <Relation value="left_of" background="#2ECC71" hotkey="shift+3"/>
+    <Relation value="right_of" background="#F39C12" hotkey="shift+4"/>
+    <Relation value="inside" background="#9B59B6" hotkey="shift+5"/>
+    <Relation value="on_top_of" background="#E91E63" hotkey="shift+9"/>
+  </Relations>
+  
+  <Choices name="scene_type" toName="image" visibleWhen="region-selected">
+    <Choice value="living_room" hotkey="ctrl+1"/>
+    <Choice value="bedroom" hotkey="ctrl+2"/>
+    <Choice value="kitchen" hotkey="ctrl+3"/>
+    <Choice value="study" hotkey="ctrl+4"/>
+    <Choice value="dining_room" hotkey="ctrl+5"/>
+    <Choice value="bathroom" hotkey="ctrl+6"/>
+    <Choice value="office" hotkey="ctrl+7"/>
+    <Choice value="other_indoor" hotkey="ctrl+o"/>
+  </Choices>
+  
+  <Rating name="image_quality" toName="image" hotkey="ctrl+r" maxRating="5" defaultValue="3"/>
+  <Rating name="spatial_complexity" toName="image" hotkey="ctrl+s" maxRating="5" defaultValue="3"/>
+  
+  <TextArea name="spatial_description" toName="image" 
+            displayMode="region-list" 
+            placeholder="请描述选中物体的空间关系，例如：'手机在桌子上面，杯子右边'"
+            hotkey="ctrl+d"
+            rows="3"
+            maxSubmissions="5"/>
+</View>
