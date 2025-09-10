@@ -6,8 +6,8 @@ train_ann = 'annotations/instances_train.json'
 val_ann = 'annotations/instances_val.json'
 
 # 数据集类别数量（根据实际数据集调整）
-num_classes = 78
-num_training_classes = 78
+num_classes = 58
+num_training_classes = 58
 
 # 类别文本文件路径
 class_text_path = 'E:/code/YOLO-World/data/indoor_dataset_cocostyle/annotations/class_texts.json'
