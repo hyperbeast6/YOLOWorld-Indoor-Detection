@@ -53,7 +53,7 @@ train_dataloader = dict(
 			type='mmdet.CocoDataset',
 			data_root=data_root,
 			ann_file=train_ann,
-			data_prefix=dict(img='images/'),
+			data_prefix=dict(img=''),
 			filter_cfg=dict(filter_empty_gt=True, min_size=1)
 		),
 		# 使用自定义类别文本文件
@@ -75,7 +75,7 @@ val_dataloader = dict(
 			type='mmdet.CocoDataset',
 			data_root=data_root,
 			ann_file=val_ann,
-			data_prefix=dict(img='images/')
+			data_prefix=dict(img='')
 		),
 		class_text_path=class_text_path,
 		test_mode=True,
