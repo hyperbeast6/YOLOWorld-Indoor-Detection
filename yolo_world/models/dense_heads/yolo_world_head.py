@@ -355,14 +355,41 @@ class YOLOWorldHead(YOLOv8Head):
     """YOLO World v8 head."""
 
     def loss(self, img_feats: Tuple[Tensor], txt_feats: Tensor,
-             txt_masks: Tensor, batch_data_samples: Union[list, dict]) -> dict:
+             txt_masks: Tensor, batch_data_samples: list) -> dict:
         """Perform forward propagation and loss calculation of the detection
         head on the features of the upstream network."""
 
         outs = self(img_feats, txt_feats, txt_masks)
-        # Fast version
-        loss_inputs = outs + (batch_data_samples['bboxes_labels'],
-                              batch_data_samples['img_metas'])
+        
+        # 从 DetDataSample 列表中提取所需信息
+        batch_gt_instances = [sample.gt_instances for sample in batch_data_samples]
+        batch_img_metas = [sample.metainfo for sample in batch_data_samples]
+        
+        # 预处理 gt_instances，确保 bboxes 是张量格式
+        from mmdet.structures.bbox.transforms import get_box_tensor
+        from mmengine.structures import InstanceData
+        
+        processed_gt_instances = []
+        for gt_instance in batch_gt_instances:
+            # 创建新的 InstanceData 对象
+            new_gt_instance = InstanceData()
+            new_gt_instance.labels = gt_instance.labels
+            
+            # 将 bboxes 转换为张量
+            if hasattr(gt_instance, 'bboxes') and gt_instance.bboxes is not None:
+                new_gt_instance.bboxes = get_box_tensor(gt_instance.bboxes)
+            else:
+                new_gt_instance.bboxes = torch.empty((0, 4), device=gt_instance.labels.device)
+            
+            # 复制其他属性
+            for key, value in gt_instance.items():
+                if key not in ['bboxes', 'labels']:
+                    new_gt_instance[key] = value
+            
+            processed_gt_instances.append(new_gt_instance)
+        
+        # 构造 loss_by_feat 所需的参数
+        loss_inputs = outs + (txt_masks, processed_gt_instances, batch_img_metas)
         losses = self.loss_by_feat(*loss_inputs)
 
         return losses

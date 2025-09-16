@@ -1,5 +1,6 @@
 # Copyright (c) Tencent Inc. All rights reserved.
 import copy
+import os
 import json
 import logging
 from typing import Callable, List, Union
@@ -79,11 +80,31 @@ class MultiModalDataset:
 
         data_info = self.get_data_info(idx)
 
+        # 确保 dataset 引用
         if hasattr(self.dataset, 'test_mode') and not self.dataset.test_mode:
             data_info['dataset'] = self
         elif not self.test_mode:
             data_info['dataset'] = self
+
+        # 统一路径格式 - 确保使用Windows格式
+        if 'img_path' in data_info:
+            img_path = os.path.normpath(data_info['img_path'])
+            img_path = img_path.replace('/', '\\')
+            data_info['img_path'] = img_path
+
+            # ✅ 检查文件是否存在
+            if not os.path.exists(img_path):
+                raise FileNotFoundError(f"Image file not found: {img_path}")
+
+            import cv2
+            img = cv2.imread(img_path)
+            if img is None:
+                raise ValueError(f"Image file cannot be read (may be corrupted or format issue): {img_path}")
+                
+        # 输出用于调试
+        # print("data_info", data_info)
         return self.pipeline(data_info)
+
 
     @force_full_init
     def __len__(self) -> int:

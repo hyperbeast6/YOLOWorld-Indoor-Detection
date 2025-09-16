@@ -3,6 +3,15 @@ import argparse
 import logging
 import os
 import os.path as osp
+import sys
+
+# 添加 third_party 路径，优先使用本地的 mmyolo
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_dir)
+third_party_path = os.path.join(project_root, 'third_party')
+# 确保路径存在且不在sys.path中
+if os.path.exists(third_party_path) and third_party_path not in sys.path:
+    sys.path.insert(0, third_party_path)
 
 from mmengine.config import Config, DictAction
 from mmengine.logging import print_log

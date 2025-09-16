@@ -1,22 +1,23 @@
-_base_ = ['../pretrain/yolo_world_v2_s_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py']
+import os
+_base_ = '../pretrain/yolo_world_v2_s_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py'
 
 # 路径根据你的数据实际位置修改（建议使用绝对路径，避免 Windows 工作目录导致的问题）
-data_root = 'E:/code/YOLO-World/data/indoor_dataset_cocostyle/'
-train_ann = 'annotations/instances_train.json'
-val_ann = 'annotations/instances_val.json'
+data_root = os.path.abspath(os.path.join('data', 'indoor_dataset_cocostyle'))
+train_ann = os.path.join('annotations', 'instances_train.json')
+val_ann = os.path.join('annotations', 'instances_val.json')
 
 # 数据集类别数量（根据实际数据集调整）
 num_classes = 58
 num_training_classes = 58
 
 # 类别文本文件路径
-class_text_path = 'E:/code/YOLO-World/data/indoor_dataset_cocostyle/annotations/class_texts.json'
+class_text_path = os.path.join(data_root, 'annotations', 'class_texts.json')
 
 # 本地定义：训练与测试的最小可运行 pipeline（包含文本与 PackDetInputs）
 # 注意：此为简化版，若需与预训练完全一致的数据增强，可再对齐上游 base 的详细配置。
 train_pipeline = [
 	# 图像与标注
-	dict(type='LoadImageFromFile'),
+	dict(type='LoadImageFromFile', to_float32=True),
 	dict(type='LoadAnnotations', with_bbox=True),
 	# 统一到 640 边长并填充
 	dict(type='mmdet.Resize', scale=(640, 640), keep_ratio=True),
@@ -88,7 +89,7 @@ test_dataloader = val_dataloader
 
 val_evaluator = dict(
 	type='mmdet.CocoMetric',
-	ann_file=data_root + val_ann,
+	ann_file=os.path.join(data_root, val_ann),
 	metric='bbox'
 )
 
@@ -121,7 +122,7 @@ default_hooks = dict(
 )
 
 # 从预训练权重加载进行微调（路径按你的实际文件修改）
-load_from = 'E:/code/YOLO-World/weights/yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth'
+load_from = r'E:\code\YOLO-World\weights\yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth'
 
 # 单卡训练常用设置（如需多卡请改用 tools/dist_train.sh 或相应启动方式）
 env_cfg = dict(cudnn_benchmark=True)

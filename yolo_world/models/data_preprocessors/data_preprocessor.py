@@ -37,7 +37,7 @@ class YOLOWDetDataPreprocessor(DetDataPreprocessor):
 
         data = self.cast_data(data)
         inputs, data_samples = data['inputs'], data['data_samples']
-        assert isinstance(data['data_samples'], dict)
+        # 现在 data_samples 是 DetDataSample 列表，不是字典
 
         # TODO: Supports multi-scale training
         if self._channel_conversion and inputs.shape[1] == 3:
@@ -49,15 +49,10 @@ class YOLOWDetDataPreprocessor(DetDataPreprocessor):
             for batch_aug in self.batch_augments:
                 inputs, data_samples = batch_aug(inputs, data_samples)
 
-        img_metas = [{'batch_input_shape': inputs.shape[2:]}] * len(inputs)
-        data_samples_output = {
-            'bboxes_labels': data_samples['bboxes_labels'],
-            'texts': data_samples['texts'],
-            'img_metas': img_metas
-        }
-        if 'masks' in data_samples:
-            data_samples_output['masks'] = data_samples['masks']
-        if 'is_detection' in data_samples:
-            data_samples_output['is_detection'] = data_samples['is_detection']
+        # 更新每个 DetDataSample 的 metainfo 中的 batch_input_shape
+        for i, sample in enumerate(data_samples):
+            if sample.metainfo is None:
+                sample.set_metainfo({})
+            sample.metainfo['batch_input_shape'] = inputs.shape[2:]
 
-        return {'inputs': inputs, 'data_samples': data_samples_output}
+        return {'inputs': inputs, 'data_samples': data_samples}
