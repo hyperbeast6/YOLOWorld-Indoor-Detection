@@ -7,8 +7,8 @@ train_ann = os.path.join('annotations', 'instances_train.json')
 val_ann = os.path.join('annotations', 'instances_val.json')
 
 # 数据集类别数量（根据实际数据集调整）
-num_classes = 58
-num_training_classes = 58
+num_classes = 78
+num_training_classes = 78
 
 # 类别文本文件路径
 class_text_path = os.path.join(data_root, 'annotations', 'class_texts.json')
@@ -54,7 +54,7 @@ train_dataloader = dict(
 			type='mmdet.CocoDataset',
 			data_root=data_root,
 			ann_file=train_ann,
-			data_prefix=dict(img=''),
+			data_prefix=dict(img='images'),
 			filter_cfg=dict(filter_empty_gt=True, min_size=1)
 		),
 		# 使用自定义类别文本文件
@@ -76,7 +76,7 @@ val_dataloader = dict(
 			type='mmdet.CocoDataset',
 			data_root=data_root,
 			ann_file=val_ann,
-			data_prefix=dict(img='')
+			data_prefix=dict(img='images')
 		),
 		class_text_path=class_text_path,
 		test_mode=True,
