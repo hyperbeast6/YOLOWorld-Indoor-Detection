@@ -6,310 +6,234 @@
     },
     {
       "id": 1,
-      "name": "bathroom"
-    },
-    {
-      "id": 2,
       "name": "bed"
     },
     {
-      "id": 3,
-      "name": "bedroom"
-    },
-    {
-      "id": 4,
+      "id": 2,
       "name": "book"
     },
     {
-      "id": 5,
+      "id": 3,
       "name": "bottle"
     },
     {
-      "id": 6,
+      "id": 4,
       "name": "bowl"
     },
     {
-      "id": 7,
-      "name": "carpet"
-    },
-    {
-      "id": 8,
-      "name": "ceiling"
-    },
-    {
-      "id": 9,
+      "id": 5,
       "name": "cell phone"
     },
     {
-      "id": 10,
+      "id": 6,
       "name": "chair"
     },
     {
-      "id": 11,
+      "id": 7,
       "name": "clock"
     },
     {
-      "id": 12,
+      "id": 8,
       "name": "couch"
     },
     {
-      "id": 13,
+      "id": 9,
       "name": "cup"
     },
     {
-      "id": 14,
-      "name": "curtain"
-    },
-    {
-      "id": 15,
+      "id": 10,
       "name": "dining table"
     },
     {
-      "id": 16,
-      "name": "dining_room"
-    },
-    {
-      "id": 17,
-      "name": "door"
-    },
-    {
-      "id": 18,
-      "name": "floor"
-    },
-    {
-      "id": 19,
+      "id": 11,
       "name": "fork"
     },
     {
-      "id": 20,
+      "id": 12,
       "name": "handbag"
     },
     {
-      "id": 21,
+      "id": 13,
       "name": "keyboard"
     },
     {
-      "id": 22,
-      "name": "kitchen"
-    },
-    {
-      "id": 23,
+      "id": 14,
       "name": "knife"
     },
     {
-      "id": 24,
+      "id": 15,
       "name": "lamp"
     },
     {
-      "id": 25,
+      "id": 16,
       "name": "laptop"
     },
     {
-      "id": 26,
-      "name": "living_room"
-    },
-    {
-      "id": 27,
-      "name": "mirror"
-    },
-    {
-      "id": 28,
+      "id": 17,
       "name": "mouse"
     },
     {
-      "id": 29,
-      "name": "office"
-    },
-    {
-      "id": 30,
-      "name": "other"
-    },
-    {
-      "id": 31,
-      "name": "other_indoor"
-    },
-    {
-      "id": 32,
+      "id": 18,
       "name": "person"
     },
     {
-      "id": 33,
-      "name": "plant"
-    },
-    {
-      "id": 34,
+      "id": 19,
       "name": "refrigerator"
     },
     {
-      "id": 35,
+      "id": 20,
       "name": "remote"
     },
     {
-      "id": 36,
-      "name": "rug"
-    },
-    {
-      "id": 37,
+      "id": 21,
       "name": "spoon"
     },
     {
-      "id": 38,
-      "name": "study"
-    },
-    {
-      "id": 39,
+      "id": 22,
       "name": "tv"
     },
     {
-      "id": 40,
+      "id": 23,
       "name": "vase"
     },
     {
-      "id": 41,
-      "name": "wall"
-    },
-    {
-      "id": 42,
-      "name": "window"
-    },
-    {
-      "id": 43,
+      "id": 24,
       "name": "microwave"
     },
     {
-      "id": 44,
+      "id": 25,
       "name": "sink"
     },
     {
-      "id": 45,
+      "id": 26,
       "name": "suitcase"
     },
     {
-      "id": 46,
+      "id": 27,
       "name": "oven"
     },
     {
-      "id": 47,
+      "id": 28,
       "name": "potted plant"
     },
     {
-      "id": 48,
+      "id": 29,
       "name": "umbrella"
     },
     {
-      "id": 49,
+      "id": 30,
       "name": "sports ball"
     },
     {
-      "id": 50,
+      "id": 31,
       "name": "apple"
     },
     {
-      "id": 51,
+      "id": 32,
       "name": "cat"
     },
     {
-      "id": 52,
+      "id": 33,
       "name": "wine glass"
     },
     {
-      "id": 53,
+      "id": 34,
       "name": "banana"
     },
     {
-      "id": 54,
+      "id": 35,
       "name": "scissors"
     },
     {
-      "id": 55,
+      "id": 36,
       "name": "teddy bear"
     },
     {
-      "id": 56,
+      "id": 37,
       "name": "toaster"
     },
     {
-      "id": 57,
+      "id": 38,
       "name": "bench"
     },
     {
-      "id": 58,
+      "id": 39,
       "name": "car"
     },
     {
-      "id": 59,
+      "id": 40,
       "name": "sheep"
     },
     {
-      "id": 60,
+      "id": 41,
       "name": "orange"
     },
     {
-      "id": 61,
+      "id": 42,
       "name": "dog"
     },
     {
-      "id": 62,
+      "id": 43,
       "name": "toilet"
     },
     {
-      "id": 63,
+      "id": 44,
       "name": "cake"
     },
     {
-      "id": 64,
+      "id": 45,
       "name": "horse"
     },
     {
-      "id": 65,
+      "id": 46,
       "name": "bicycle"
     },
     {
-      "id": 66,
+      "id": 47,
       "name": "bird"
     },
     {
-      "id": 67,
+      "id": 48,
       "name": "hot dog"
     },
     {
-      "id": 68,
+      "id": 49,
       "name": "donut"
     },
     {
-      "id": 69,
+      "id": 50,
       "name": "frisbee"
     },
     {
-      "id": 70,
+      "id": 51,
       "name": "boat"
     },
     {
-      "id": 71,
+      "id": 52,
       "name": "tie"
     },
     {
-      "id": 72,
+      "id": 53,
       "name": "carrot"
     },
     {
-      "id": 73,
+      "id": 54,
       "name": "motorcycle"
     },
     {
-      "id": 74,
+      "id": 55,
       "name": "truck"
     },
     {
-      "id": 75,
+      "id": 56,
       "name": "sandwich"
     },
     {
-      "id": 76,
+      "id": 57,
       "name": "tennis racket"
     },
     {
-      "id": 77,
+      "id": 58,
       "name": "pizza"
     }
   ],

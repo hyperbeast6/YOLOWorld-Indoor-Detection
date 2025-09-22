@@ -7,8 +7,8 @@ train_ann = os.path.join('annotations', 'instances_train.json')
 val_ann = os.path.join('annotations', 'instances_val.json')
 
 # 数据集类别数量（根据实际数据集调整）
-num_classes = 78
-num_training_classes = 78
+num_classes = 59  # 重新划分后的类别数量
+num_training_classes = 59
 
 # 类别文本文件路径
 class_text_path = os.path.join(data_root, 'annotations', 'class_texts.json')
@@ -64,6 +64,7 @@ train_dataloader = dict(
 	)
 )
 
+# 验证集配置
 val_dataloader = dict(
 	_delete_=True,
 	batch_size=4,
@@ -108,12 +109,17 @@ model = dict(
 )
 
 # 训练策略：80 个 epoch，使用较小学习率进行微调
-train_cfg = dict(type='EpochBasedTrainLoop', max_epochs=80, val_interval=1)
+train_cfg = dict(type='EpochBasedTrainLoop', max_epochs=80, val_interval=80)
 
 optim_wrapper = dict(
 	optimizer=dict(
 		_delete_=True,
-		type='SGD', lr=2e-4, momentum=0.9, weight_decay=5e-4
+		type='SGD', lr=5e-5, momentum=0.9, weight_decay=5e-4  # 进一步降低学习率
+	),
+	param_scheduler=dict(
+		type='MultiStepLR',
+		milestones=[40, 60],  # 在第40和60个epoch降低学习率
+		gamma=0.1
 	)
 )
 
